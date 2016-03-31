@@ -1,0 +1,46 @@
+
+<h2>Products</h2>
+
+<div class="row">
+	<div id="category-filter" class="col-md-2">
+		filters go here
+	</div>
+
+	<div id="products-list" class="col-md-10">
+		<% @products.each do |product| %>
+			<div class="col-md-4">
+
+				<p> Photo goes here</p>
+				<%= image_tag product.image, class: 'img-responsive' %>
+
+				<p class="product-brand_name bold center"><%= product.brand_name %></p>
+				<p class="product-name bold center"><%= product.name %></p>
+				<p class="product-price bold center"><%= product.price %></p>
+			</div>
+		<% end %>
+
+
+	</div>
+</div>
+
+
+
+
+<div class="table-responsive col-xs-10 ">
+	<table class="table table-striped">
+	  <tr>
+ 		<th>Brand Name</th>
+ 		<th>Name</th>
+ 		<th>Price</th>
+	</tr>
+	<% @products.each do |product| %>
+		<tr>
+			<td><%= product.brand_name %></td>
+			<td><%= product.name %></td>
+			<td><%= product.price %></td>
+		</tr>
+	<% end %>
+	</table>
+</div>
+
+
