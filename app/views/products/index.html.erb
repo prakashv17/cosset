@@ -9,9 +9,9 @@
 	<div id="products-list" class="col-md-10">
 		<% @products.each do |product| %>
 			<div class="col-md-4">
-
-				<p> Photo goes here</p>
-				<%= image_tag product.image, class: 'img-responsive' %>
+				<%= link_to product_path(product) do %>
+					<%= image_tag product.image, class: 'img-responsive' %>
+				<% end %>
 
 				<p class="product-brand_name bold center"><%= product.brand_name %></p>
 				<p class="product-name bold center"><%= product.name %></p>
